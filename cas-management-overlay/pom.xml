@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<!-- specify the parent maven porject -->
+	<parent>
+		<groupId>com.cas</groupId>
+		<artifactId>cas-bullshit-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<!-- no need for group id and version id as they are already defined in 
+		the parent pom -->
+	<artifactId>cas-management-overlay</artifactId>
+	<!-- war packaging -->
+	<packaging>war</packaging>
+	<name>cas-management-overlay Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>org.jasig.cas</groupId>
+			<artifactId>cas-management-webapp</artifactId>
+			<type>war</type>
+			<scope>runtime</scope>
+			<!-- fetch the dependency from the parent pom so no need to specfiy version 
+				here -->
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.10</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>cas-management</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<!-- again the version is from the parent no need to write it here -->
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
